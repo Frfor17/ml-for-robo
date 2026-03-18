@@ -19,20 +19,15 @@ def generate_launch_description():
     launch_file_dir = os.path.join(
         get_package_share_directory("turtlebot3_gazebo"), "launch"
     )
-    pkg_gazebo_ros = get_package_share_directory("gazebo_ros")
+    pkg_gz_sim = get_package_share_directory("ros_gz_sim")
 
     return LaunchDescription(
         [
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
-                    os.path.join(pkg_gazebo_ros, "launch", "gzserver.launch.py")
+                    os.path.join(pkg_gz_sim, "launch", "gz_sim.launch.py")
                 ),
                 launch_arguments={"world": world, "pause": pause}.items(),
-            ),
-            IncludeLaunchDescription(
-                PythonLaunchDescriptionSource(
-                    os.path.join(pkg_gazebo_ros, "launch", "gzclient.launch.py")
-                ),
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
