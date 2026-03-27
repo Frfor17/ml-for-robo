@@ -14,6 +14,8 @@ import numpy as np
 from geometry_msgs.msg import Pose, Twist
 from squaternion import Quaternion
 
+# обёртка окружения для RL
+# функция награждения 
 
 class ROS_env:
     def __init__(

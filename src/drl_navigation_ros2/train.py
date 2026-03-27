@@ -9,6 +9,9 @@ import numpy as np
 from utils import record_eval_positions
 from pretrain_utils import Pretraining
 
+# основной скрипт обучения RL-агента для навигации складского робота
+# импортирует RL-алгоритмы TD3, SAC
+
 
 def main(args=None):
     """Main training function"""
