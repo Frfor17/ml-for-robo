@@ -23,9 +23,9 @@ class SensorSubscriber(Node):
         self.subscriber_ = self.create_subscription(
             Odometry, "odom", self.odom_listener_callback, 1
         )
-        self.latest_position = None
-        self.latest_heading = None
-        self.latest_scan = None
+        self.latest_position = None # собирает инфу о позиции?
+        self.latest_heading = None # куда направляется
+        self.latest_scan = None  # но здесь нет v скорости, добавить бы
 
     def scan_listener_callback(self, msg):
         self.latest_scan = msg.ranges[:]
