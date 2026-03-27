@@ -10,6 +10,11 @@ from geometry_msgs.msg import Pose, Twist
 from visualization_msgs.msg import Marker
 from rclpy.logging import LoggingSeverity
 
+
+# в целом, весь этот файл
+# вспомогательный, собирает инфу с сенсоров(LazerScan, Odometry), управляет движением
+
+
 SEVERITY = LoggingSeverity.ERROR
 
 
