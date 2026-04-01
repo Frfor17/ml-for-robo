@@ -1,4 +1,6 @@
 import os
+print(f"🔍 LAUNCH DEBUG: TURTLEBOT3_MODEL={os.environ.get('TURTLEBOT3_MODEL', 'NOT SET')}")
+print(f"🔍 World path: {world}")
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -23,6 +25,11 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
+                LogInfo(msg=[
+                '🔍 LAUNCH DEBUG: TURTLEBOT3_MODEL=', 
+                os.environ.get('TURTLEBOT3_MODEL', 'NOT SET')
+                ]),
+                LogInfo(msg=['🔍 World path: ', world]),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
                     os.path.join(pkg_gz_sim, "launch", "gz_sim.launch.py")
